@@ -26,7 +26,7 @@ class SongsController < ApplicationController
     if !params[:genres].blank?
       @song.genre_ids = params[:genres]
     end
-    
+
     @artist = Artist.find_or_create_by(name: params["Artist Name"])
     @song.update(artist: @artist)
 
